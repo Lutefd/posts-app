@@ -14,9 +14,7 @@ function Posts() {
 export default Posts;
 
 export async function loader() {
-  const response = await fetch(
-    `https://posts-app-production.up.railway.app/posts/`
-  );
+  const response = await fetch(`http://localhost:8080/posts`);
   const resData = await response.json();
   if (resData.posts !== undefined) {
     return resData.posts;
