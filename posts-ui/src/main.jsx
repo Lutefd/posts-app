@@ -3,12 +3,11 @@ import ReactDOM from 'react-dom/client';
 
 import { createBrowserRouter, RouterProvider } from 'react-router-dom';
 
-import App from './routes/Posts';
 import NewPost, { postMessage as post } from './routes/NewPost';
 import './index.css';
 import Layout from './routes/Layout';
 import Posts, { loader as postsLoader } from './routes/Posts';
-import PostDetails from './routes/PostDetails';
+import PostDetails, { loader as postDetailsLoader } from './routes/PostDetails';
 
 const router = createBrowserRouter([
   {
@@ -18,11 +17,11 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Posts />,
+        loader: postsLoader,
         children: [
           { path: '/create', element: <NewPost />, action: post },
-          { path: '/:id', element: <PostDetails /> },
+          { path: '/:id', element: <PostDetails />, loader: postDetailsLoader },
         ],
-        loader: postsLoader,
       },
     ],
   },
