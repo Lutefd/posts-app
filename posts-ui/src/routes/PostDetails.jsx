@@ -34,7 +34,9 @@ function PostDetails() {
 export default PostDetails;
 
 export async function loader({ params }) {
-  const response = await fetch(`${process.env.API_URL}${params.id}`);
+  const response = await fetch(
+    `https://posts-app-production.up.railway.app/posts/${params.id}`
+  );
   const resData = await response.json();
   return resData.post;
 }

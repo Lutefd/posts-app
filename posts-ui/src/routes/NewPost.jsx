@@ -31,7 +31,7 @@ export default NewPost;
 export async function postMessage({ request }) {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData.entries());
-  await fetch(process.env.API_URL, {
+  await fetch(`https://posts-app-production.up.railway.app/posts/`, {
     method: 'POST',
     body: JSON.stringify(postData),
     headers: {
