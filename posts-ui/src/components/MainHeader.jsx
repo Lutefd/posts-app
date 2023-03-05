@@ -7,12 +7,12 @@ function MainHeader({ onCreatePost }) {
     <header className={classes.header}>
       <h1 className={classes.logo}>
         <MdMessage />
-        React Posts
+        Mural de recados
       </h1>
       <p>
         <button className={classes.button} onClick={onCreatePost}>
           <MdPostAdd size={18} />
-          Novo Post
+          Novo Recado
         </button>
       </p>
     </header>

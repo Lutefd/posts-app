@@ -45,7 +45,7 @@ function PostsList({ isPosting, onStopPosting }) {
       )}
       {posts.length === 0 && (
         <div style={{ textAlign: 'center', color: 'white' }}>
-          <h2>Não existem posts no momento.</h2>
+          <h2>Não existem recados no momento.</h2>
           <p>Comece a adicionar alguns!</p>
         </div>
       )}
