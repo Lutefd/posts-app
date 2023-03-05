@@ -12,3 +12,7 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
+app.get('/posts', async (req, res) => {
+  const storedPosts = await getStoredPosts();
+  res.json({ posts: storedPosts });
+});
