@@ -7,7 +7,7 @@ function MainHeader({ onCreatePost }) {
     <header className={classes.header}>
       <h1 className={classes.logo}>
         <MdMessage />
-        Mural de recados
+        <span className={classes.title}>Mural de recados</span>
       </h1>
       <p>
         <button className={classes.button} onClick={onCreatePost}>

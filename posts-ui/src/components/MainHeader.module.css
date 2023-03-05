@@ -34,3 +34,19 @@
 .button:hover {
   background-color: #8c6cf7;
 }
+
+@media (max-width: 768px) {
+  .header {
+    margin: 0;
+    flex-direction: column;
+    justify-content: center;
+    padding: 2.75rem;
+  }
+  .logo {
+    justify-items: center;
+  }
+  .title {
+    max-width: 10ch;
+    margin-left: -2rem;
+  }
+}
