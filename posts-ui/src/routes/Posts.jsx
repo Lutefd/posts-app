@@ -16,5 +16,9 @@ export default Posts;
 export async function loader() {
   const response = await fetch(process.env.API_URL);
   const resData = await response.json();
-  return resData.posts;
+  if (resData.posts !== undefined) {
+    return resData.posts;
+  } else {
+    return [];
+  }
 }
