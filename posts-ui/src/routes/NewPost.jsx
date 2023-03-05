@@ -31,7 +31,7 @@ export default NewPost;
 export async function postMessage({ request }) {
   const formData = await request.formData();
   const postData = Object.fromEntries(formData.entries());
-  await fetch('http://localhost:8080/posts', {
+  await fetch(process.env.API_URL, {
     method: 'POST',
     body: JSON.stringify(postData),
     headers: {
