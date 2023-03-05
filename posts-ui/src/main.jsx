@@ -8,6 +8,7 @@ import NewPost, { postMessage as post } from './routes/NewPost';
 import './index.css';
 import Layout from './routes/Layout';
 import Posts, { loader as postsLoader } from './routes/Posts';
+import PostDetails from './routes/PostDetails';
 
 const router = createBrowserRouter([
   {
@@ -17,10 +18,12 @@ const router = createBrowserRouter([
       {
         path: '/',
         element: <Posts />,
-        children: [{ path: '/create', element: <NewPost />, action: post }],
+        children: [
+          { path: '/create', element: <NewPost />, action: post },
+          { path: '/:id', element: <PostDetails /> },
+        ],
         loader: postsLoader,
       },
-      { path: '/:id', element: <App /> },
     ],
   },
 ]);
