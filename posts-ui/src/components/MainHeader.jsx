@@ -1,8 +1,9 @@
 import { MdPostAdd, MdMessage } from 'react-icons/md';
+import { Link } from 'react-router-dom';
 
 import classes from './MainHeader.module.css';
 
-function MainHeader({ onCreatePost }) {
+function MainHeader() {
   return (
     <header className={classes.header}>
       <h1 className={classes.logo}>
@@ -10,10 +11,10 @@ function MainHeader({ onCreatePost }) {
         <span className={classes.title}>Mural de recados</span>
       </h1>
       <p>
-        <button className={classes.button} onClick={onCreatePost}>
+        <Link to="/create" className={classes.button}>
           <MdPostAdd size={18} />
           Novo Recado
-        </button>
+        </Link>
       </p>
     </header>
   );
