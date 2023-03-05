@@ -3,6 +3,7 @@ const bodyParser = require('body-parser');
 
 const { getStoredPosts, storePosts } = require('./data/posts');
 const app = express();
+const port = process.env.PORT || 8080;
 
 app.use(bodyParser.json());
 
@@ -33,4 +34,8 @@ app.post('/posts', async (req, res) => {
   const updatedPosts = [newPost, ...existingPosts];
   await storePosts(updatedPosts);
   res.status(201).json({ message: 'Stored new post.', post: newPost });
+});
+
+app.listen(port, () => {
+  console.log(`Server listening on port ${port}`);
 });
