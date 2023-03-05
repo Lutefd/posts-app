@@ -7,7 +7,7 @@ import App from './routes/Posts';
 import NewPost from './routes/NewPost';
 import './index.css';
 import Layout from './routes/Layout';
-import Posts from './routes/Posts';
+import Posts, { loader as postsLoader } from './routes/Posts';
 
 const router = createBrowserRouter([
   {
@@ -18,6 +18,7 @@ const router = createBrowserRouter([
         path: '/',
         element: <Posts />,
         children: [{ path: '/create', element: <NewPost /> }],
+        loader: postsLoader,
       },
       { path: '/:id', element: <App /> },
     ],
