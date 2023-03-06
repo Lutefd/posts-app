@@ -1,0 +1,26 @@
+.btnGroup button {
+  background-color: #534aae; /* Green background */
+  border: 1px solid #534aae; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  border-radius: 1rem;
+}
+
+.btnGroup {
+  display: flex;
+  gap: 1rem;
+  margin-top: 1rem;
+}
+
+.btnGroup button:disabled {
+  background-color: #534aae; /* Green background */
+  border: 1px solid #534aae; /* Green border */
+  color: white; /* White text */
+  padding: 10px 24px; /* Some padding */
+  cursor: pointer; /* Pointer/hand icon */
+  float: left; /* Float the buttons side by side */
+  border-radius: 1rem;
+  opacity: 0.5;
+}
