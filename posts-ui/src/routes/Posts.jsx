@@ -11,7 +11,9 @@ function Posts() {
 
   useEffect(() => {
     async function fetchData() {
-      const response = await fetch(`http://localhost:8000/posts?page=${page}`);
+      const response = await fetch(
+        `https://posts-app-production.up.railway.app/posts?page=${page}`
+      );
       const resData = await response.json();
       if (resData.posts !== undefined) {
         setPosts(resData.posts);
