@@ -1,16 +1,13 @@
 import { useLoaderData } from 'react-router-dom';
-
+import { useEffect, useState } from 'react';
 import Post from './Post';
-
 import classes from './PostsList.module.css';
 
-function PostsList() {
-  const posts = useLoaderData();
-
+function PostsList({ posts }) {
   return (
     <>
       {posts.length > 0 && (
-        <ul className={classes.posts}>
+        <div className={classes.posts}>
           {posts.map((post) => (
             <Post
               key={post.id}
@@ -19,7 +16,7 @@ function PostsList() {
               body={post.body}
             />
           ))}
-        </ul>
+        </div>
       )}
       {posts.length === 0 && (
         <div style={{ textAlign: 'center', color: 'white' }}>
