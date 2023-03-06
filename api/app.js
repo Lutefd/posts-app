@@ -14,11 +14,6 @@ app.use((req, res, next) => {
   next();
 });
 
-app.get('/posts/all', async (req, res) => {
-  const storedPosts = await getStoredPosts();
-  res.json({ posts: storedPosts });
-});
-
 app.get('/posts', async (req, res) => {
   const storedPosts = await getStoredPosts();
   const page = req.query.page ? parseInt(req.query.page) : 1;
