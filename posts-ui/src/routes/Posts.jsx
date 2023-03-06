@@ -1,7 +1,7 @@
 import PostsList from '../components/PostsList';
 import Pagination from '../components/Pagination';
 import { useState, useEffect } from 'react';
-import { Outlet, useLoaderData } from 'react-router-dom';
+import { Outlet } from 'react-router-dom';
 import classes from './Posts.module.css';
 
 function Posts() {
