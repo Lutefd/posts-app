@@ -13,9 +13,24 @@ app.use((req, res, next) => {
   res.setHeader('Access-Control-Allow-Headers', 'Content-Type');
   next();
 });
-app.get('/posts', async (req, res) => {
+
+app.get('/posts/all', async (req, res) => {
   const storedPosts = await getStoredPosts();
   res.json({ posts: storedPosts });
+});
+
+app.get('/posts', async (req, res) => {
+  const storedPosts = await getStoredPosts();
+  const page = req.query.page ? parseInt(req.query.page) : 1;
+  const limit = req.query.limit ? parseInt(req.query.limit) : 4;
+  const startIndex = (page - 1) * limit;
+  const endIndex = page * limit;
+  const posts = storedPosts.slice(startIndex, endIndex);
+  res.json({
+    posts: posts,
+    currentPage: page,
+    totalPages: Math.ceil(storedPosts.length / limit),
+  });
 });
 
 app.get('/posts/:id', async (req, res) => {
