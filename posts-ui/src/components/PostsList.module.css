@@ -5,8 +5,9 @@
   padding: 2rem;
   display: grid;
   gap: 1rem;
-  grid-template-columns: repeat(3, 30%);
+  grid-template-columns: repeat(6, 30%);
   justify-content: center;
+  height: 5rem;
 }
 @media (max-width: 768px) {
   .posts {

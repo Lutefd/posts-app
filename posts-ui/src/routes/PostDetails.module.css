@@ -22,3 +22,10 @@
 .details a {
   text-decoration: none;
 }
+
+@media (max-width: 768px) {
+  .details {
+    padding: 2rem;
+    width: 100%;
+  }
+}
